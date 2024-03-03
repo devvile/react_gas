@@ -1,0 +1,22 @@
+<script type="text/babel">
+  
+
+  const BTN = (props) => {
+  console.log(props);
+  
+  const handleClick = () => {
+    i++;
+    props.onModify(4);
+    console.log('Button was clicked');
+    console.log(i);
+  };
+    return (
+    <>
+          <li>
+             <button onClick={handleClick}>Click Me</button>
+          </li>
+    </>
+    )
+  }
+
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <?!= require('head')?>
+    <?!= require('style.css')?>
+
+    <base target="_top">
+  </head>
+  <body>
+    <div class = "workfield">
+      <div class = "btns">
+        <button class= 'renderBtn'> RENDER </button>
+      </div>
+      <div class ="reactWrapper">
+       <div id="root"></div>
+      </div>
+
+    <?!= require('Store.js')?>
+    <?!= require('BTN.js')?>
+    <?!= require('Navbar.js')?>
+    <?!= require('App.js')?>
+    <?!= require('index.js')?>
+    <?!= require('rest.js')?>
+</html>

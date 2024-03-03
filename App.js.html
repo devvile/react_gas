@@ -1,0 +1,45 @@
+<script type="text/babel">
+
+const App = (props) => {
+  const { useEffect, useState } = React;
+  const [state, dispatch] = useStore();
+  console.log(state);
+  console.log("render");
+  const [externalValue, setExternalValue] = useState(externalVariable);
+
+  /*
+  const setData = (data) => {
+    data.messages = JSON.parse( data.messages );
+    data.agenda = JSON.parse( data.agenda );
+    dispatch({type: SET_STORE, payload: data});
+    dispatch({type: LOADING})
+  }
+  */
+  useEffect(() => {
+    // Function to update state based on the external variable
+    const updateFromExternal = () => {
+      setExternalValue(externalVariable);
+    };
+
+    const intervalId = setInterval(updateFromExternal, 1000);
+
+
+    return () => clearInterval(intervalId);
+  }, []); 
+
+
+  return (
+      <>
+        <ul>
+          <h4>{props.myProp}</h4>
+          <BTN val = {props.myProp} className="btn-main"/>
+          <BTN val = {props.myProp} className="btn-main"/>
+          <h4>{externalValue}</h4>
+        </ul>
+     </>  
+  )
+}
+
+
+
+</script>
